@@ -17,7 +17,7 @@ MM_allsamesum(y, n=NULL, paras)
 MM_differsums(y, n=NULL, paras)
 MM_allsamesum_A(y, paras)
 MM_differsums_A(y, paras)
-MM_single(yrow, paras)
+MM_single(yrow, paras, givelog=FALSE)
 MM_support(paras, ss)
 }
 \arguments{
@@ -28,6 +28,9 @@ MM_support(paras, ss)
     Default value of \code{NULL} means to interpret each row of \code{y}
     as being observed once}
   \item{ss}{Sufficient statistics, as returned by \code{suffstats()}}
+  \item{givelog}{Boolean in \code{MM_single()} with \code{TRUE} meaning
+    to return the log likelihood and default \code{FALSE} meaning to
+    return the likelihood}
   \item{paras}{Object of class \code{paras}}
 }
 \details{

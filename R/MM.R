@@ -233,12 +233,18 @@ setMethod("show","MB",
 "lmultinomial" <- function(x){lfactorial(sum(x))-sum(lfactorial(x))} 
  "multinomial" <- function(x){exp(lmultinomial(x))}
  
-"MM_single" <- function(yrow,paras){ # no normalizing constant; 'yrow' means a single row  of y.
+"MM_single" <- function(yrow,paras,givelog=FALSE){ # no normalizing constant; 'yrow' means a single row  of y.
   stopifnot(is.vector(yrow))
-  theta <- theta(paras)
+  M <- theta(paras)  # 'M' for 'Matrix', avoid theta nameclash
   p <- p(paras)
-  theta[lower.tri(theta,TRUE)] <- 1 
-  multinomial(yrow) * prod(p^yrow) * exp(quad.form(log(theta),yrow))
+  M[lower.tri(M,TRUE)] <- 1 
+  # multinomial(yrow) * prod(p^yrow) * exp(quad.form(log(theta),yrow))
+  out <- lmultinomial(yrow) + sum(log(p)*yrow) + quad.form(log(M),yrow)
+  if(givelog){
+    return(out)
+  } else {
+    return(exp(out))
+  }
 } 
 
 "dMM" <- function(Y,paras){ # includes normalizing constant
@@ -616,16 +622,16 @@ setMethod("gunter","Oarray", .gunter_MB_to_Oarray)
     kernel[jj] <- c(-1L,+1L)
     proposed <- xin + kernel
     if(any(proposed<0)){
-      num <- 0
+      lognum <- -Inf
     } else {
-      num <- MM_single(proposed, paras)
+      lognum <- MM_single(proposed, paras,givelog=TRUE)
     }
-    den <- MM_single(xin,paras)
-    if ((num == 0) & (den == 0)) {
+    logden <- MM_single(xin,paras,givelog=TRUE)
+    if ((lognum == -Inf) & (logden == -Inf)) {
       print("this cannot happen")
       alpha <- 0
     } else {
-      alpha <- min(1, num/den)
+      alpha <- min(1, exp(lognum-logden))
     }
     if (runif(1) < alpha) {
       ans <- proposed
