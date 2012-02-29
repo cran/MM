@@ -1,0 +1,7 @@
+exportPattern("^[^\\.]")
+
+S3method(print, gunter)
+S3method(print, gunter_MB)
+S3method(print, Lindsey_output)
+S3method(print, suffstats)
+S3method(print, summary.suffstats)
