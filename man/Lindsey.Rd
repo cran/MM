@@ -105,6 +105,7 @@ a <- matrix(c(63,40,26,7,69,42,19,5,48,21,16,2,33,11,9,1,21,8,9,0,
 # a <- table(subset(bioChemists, fem == 'Men' & art < 8))
 
 dimnames(a) <- list(papers=0:7,children=0:3)
+require(Oarray)
 a <- as.Oarray(a,offset=0)
 # thus a[3,1]==11 means that 11 subjects had 3 papers and 1 child
 

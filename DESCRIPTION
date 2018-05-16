@@ -1,16 +1,16 @@
 Package: MM
 Type: Package
-Title: The multiplicative multinomial distribution
-Description: Description: Various utilities for the Multiplicative
-        Multinomial distribution
-Version: 1.6-2
-Depends: R (>= 2.10.0), methods, magic, partitions, emulator, Oarray
-        (>= 1.4-5)
-Date: 2012-02-29
+Title: The Multiplicative Multinomial Distribution
+Description: Various utilities for the Multiplicative Multinomial distribution.
+Version: 1.6-5
+Depends: R (>= 2.10.0), Oarray (>= 1.4-6), partitions (>= 1.9-14)
+Imports: magic (>= 1.5-6), abind, emulator (>= 1.2-13), methods
+Date: 2018-05-16
 Author: Robin K. S. Hankin and P. M. E. Altham
 Maintainer: Robin K. S. Hankin <hankin.robin@gmail.com>
 License: GPL-2
 LazyLoad: yes
-Packaged: 2013-01-10 21:25:35 UTC; rksh
+Packaged: 2018-05-16 08:56:55 UTC; rhankin
+NeedsCompilation: no
 Repository: CRAN
-Date/Publication: 2013-01-21 12:29:25
+Date/Publication: 2018-05-16 09:21:57 UTC
