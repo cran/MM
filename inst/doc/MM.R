@@ -1,4 +1,4 @@
-### R code from vignette source 'Gianfranco.Rnw'
+### R code from vignette source 'MM.Rnw'
 
 ###################################################
 ### code chunk number 1: intro
@@ -141,7 +141,7 @@ L <- Lindsey(wilson)
 
 
 ###################################################
-### code chunk number 21: Gianfranco.Rnw:771-772
+### code chunk number 21: MM.Rnw:771-772
 ###################################################
 expected_suffstats(L,5)
 
@@ -293,14 +293,14 @@ M
 
 
 ###################################################
-### code chunk number 41: Gianfranco.Rnw:1022-1024
+### code chunk number 41: MM.Rnw:1022-1024
 ###################################################
 bacon <- slice.index(danaher,1)
 eggs  <- slice.index(danaher,2)
 
 
 ###################################################
-### code chunk number 42: Gianfranco.Rnw:1025-1027
+### code chunk number 42: MM.Rnw:1025-1027
 ###################################################
 sum(bacon*danaher)         # Observed number of bacon purchases
 sum(bacon*M)               # Expectation;  matches
