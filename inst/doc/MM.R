@@ -141,7 +141,7 @@ L <- Lindsey(wilson)
 
 
 ###################################################
-### code chunk number 21: MM.Rnw:771-772
+### code chunk number 21: MM.Rnw:769-770
 ###################################################
 expected_suffstats(L,5)
 
@@ -157,6 +157,7 @@ head(pollen)
 ###################################################
 ### code chunk number 23: usepartitions
 ###################################################
+library("partitions")
 S(rep(100,4),100)
 
 
@@ -293,14 +294,14 @@ M
 
 
 ###################################################
-### code chunk number 41: MM.Rnw:1022-1024
+### code chunk number 41: MM.Rnw:1021-1023
 ###################################################
 bacon <- slice.index(danaher,1)
 eggs  <- slice.index(danaher,2)
 
 
 ###################################################
-### code chunk number 42: MM.Rnw:1025-1027
+### code chunk number 42: MM.Rnw:1024-1026
 ###################################################
 sum(bacon*danaher)         # Observed number of bacon purchases
 sum(bacon*M)               # Expectation;  matches
